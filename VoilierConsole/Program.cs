@@ -56,7 +56,7 @@ namespace mysqlefcore
                 context.Database.EnsureCreated();
 
                 // Adds a publisher
-                var publisher = new Publisher
+                var publisher = new Etape
                 {
                     Name = "Mariner Books"
                 };
@@ -70,7 +70,7 @@ namespace mysqlefcore
                     Author = "J.R.R. Tolkien",
                     Language = "English",
                     Pages = 1216,
-                    Publisher = publisher
+                    Etape = publisher
                 });
                 context.Course.Add(new Course
                 {
@@ -79,7 +79,7 @@ namespace mysqlefcore
                     Author = "Emma Donoghue",
                     Language = "English",
                     Pages = 416,
-                    Publisher = publisher
+                    Etape = publisher
                 });
 
                 // Saves changes
@@ -93,13 +93,13 @@ namespace mysqlefcore
             using (var context = new Voilier())
             {
                 var books = context.Course
-                    .Include(p => p.Publisher);
+                    .Include(p => p.Etape);
                 foreach(var book in books)
                 {
                     var data = new StringBuilder();
                     data.AppendLine($"ISBN: {book.ISBN}");
                     data.AppendLine($"Title: {book.Title}");
-                    data.AppendLine($"Publisher: {book.Publisher.Name}");
+                    data.AppendLine($"Publisher: {book.Etape.Name}");
                     Console.WriteLine(data.ToString());
                 }
             }

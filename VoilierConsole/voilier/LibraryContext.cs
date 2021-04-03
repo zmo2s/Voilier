@@ -7,7 +7,7 @@ namespace mysqlefcore
     {
         public DbSet<Course> Course { get; set; }
 
-        public DbSet<Publisher> Publisher { get; set; }
+        public DbSet<Etape> Publisher { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -18,7 +18,7 @@ namespace mysqlefcore
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Publisher>(entity =>
+            modelBuilder.Entity<Etape>(entity =>
             {
                 entity.HasKey(e => e.ID);
                 entity.Property(e => e.Name).IsRequired();
@@ -28,7 +28,7 @@ namespace mysqlefcore
             {
                 entity.HasKey(e => e.ISBN);
                 entity.Property(e => e.Title).IsRequired();
-                entity.HasOne(d => d.Publisher)
+                entity.HasOne(d => d.Etape)
                     .WithMany(p => p.Books);
             });
         }
