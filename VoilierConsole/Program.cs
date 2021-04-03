@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using VoilierLibrary;
 
 namespace VoilierConsole
@@ -31,3 +31,78 @@ namespace VoilierConsole
         }
     }
 }
+
+*/
+
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Text;
+
+namespace mysqlefcore
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            InsertData();
+            PrintData();
+        }
+
+        private static void InsertData()
+        {
+            using(var context = new Voilier())
+            {
+                // Creates the database if not exists
+                context.Database.EnsureCreated();
+
+                // Adds a publisher
+                var publisher = new Publisher
+                {
+                    Name = "Mariner Books"
+                };
+                context.Publisher.Add(publisher);
+
+                // Adds some books
+                context.Course.Add(new Course
+                {
+                    ISBN = "978-0545540035415",
+                    Title = "The Lord of the Rings",
+                    Author = "J.R.R. Tolkien",
+                    Language = "English",
+                    Pages = 1216,
+                    Publisher = publisher
+                });
+                context.Course.Add(new Course
+                {
+                    ISBN = "978-0555475247762",
+                    Title = "The Sealed Letter",
+                    Author = "Emma Donoghue",
+                    Language = "English",
+                    Pages = 416,
+                    Publisher = publisher
+                });
+
+                // Saves changes
+                context.SaveChanges();
+            }
+        }
+
+        private static void PrintData()
+        {
+            // Gets and prints all books in database
+            using (var context = new Voilier())
+            {
+                var books = context.Course
+                    .Include(p => p.Publisher);
+                foreach(var book in books)
+                {
+                    var data = new StringBuilder();
+                    data.AppendLine($"ISBN: {book.ISBN}");
+                    data.AppendLine($"Title: {book.Title}");
+                    data.AppendLine($"Publisher: {book.Publisher.Name}");
+                    Console.WriteLine(data.ToString());
+                }
+            }
+        }
+    }
+}          
