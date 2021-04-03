@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace VoilierLibrary
 {
@@ -16,8 +17,11 @@ namespace VoilierLibrary
         public int Id { get; private set; }
         public String Nom { get; private set; }
         public DateTime DateDebut { get; private set; } 
-        public DateTime DateFin { get; private set; } 
-      
+        public DateTime DateFin { get; private set; }
+        private List<VoilierEtape> listeVoilierEtapes = new List<VoilierEtape>();
+        private Course course;
+        
+        
         #endregion
         
         #region function

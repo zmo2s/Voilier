@@ -26,8 +26,12 @@ namespace VoilierLibrary
         public int Poids { get; private set; }
         public Double Latitude { get; private set; }
         public Double Longitude { get; private set; }
+
+        public Personne Personne;
+        public VoilierEtape VoilierEtape;
+
         #endregion
-        
-        
+
+
     }
 }

@@ -13,6 +13,9 @@ namespace VoilierLibrary
         private List<Penalite> listePenalite = new List<Penalite>();
         private List<Etape> listeEtape = new List<Etape>();
         public Course course;
+        public Voilier voileir;
+   
+        
         
         #endregion
 

@@ -12,6 +12,8 @@ namespace VoilierLibrary
         }
 
         #region  attribut
+
+        public VoilierEtape VoilierEtape{ get; private set; }
         public int Id { get; private set; }
         public String Name { get; private set; }
         public TimeSpan Duree { get; private set; } 

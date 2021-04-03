@@ -16,3 +16,6 @@
 /home/antonin/Documents/voilier/ClassLibrary1/VoilierLibrary/obj/Debug/netcoreapp3.1/VoilierLibrary.csproj.CoreCompileInputs.cache
 /home/antonin/Documents/voilier/ClassLibrary1/VoilierLibrary/obj/Debug/netcoreapp3.1/VoilierLibrary.dll
 /home/antonin/Documents/voilier/ClassLibrary1/VoilierLibrary/obj/Debug/netcoreapp3.1/VoilierLibrary.pdb
+/home/antonin/Documents/voilier/ClassLibrary1/VoilierLibrary/bin/Debug/netcoreapp3.1/VoilierLibrary.runtimeconfig.json
+/home/antonin/Documents/voilier/ClassLibrary1/VoilierLibrary/bin/Debug/netcoreapp3.1/VoilierLibrary.runtimeconfig.dev.json
+/home/antonin/Documents/voilier/ClassLibrary1/VoilierLibrary/obj/Debug/netcoreapp3.1/VoilierLibrary.genruntimeconfig.cache

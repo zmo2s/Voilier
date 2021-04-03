@@ -19,6 +19,7 @@ namespace VoilierLibrary
         public DateTime Duree { get; private set; } 
         public DateTime DureeCmumuleBrute { get; private set; } 
         public DateTime DureeCumuleReel { get; private set; } 
+        private List<VoilierEtape> listeVoilierEtapes = new List<VoilierEtape>();
         #endregion
 
  
