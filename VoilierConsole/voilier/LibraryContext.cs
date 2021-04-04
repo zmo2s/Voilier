@@ -7,7 +7,7 @@ namespace mysqlefcore
     {
         public DbSet<Course> Course { get; set; }
 
-        public DbSet<Etape> Publisher { get; set; }
+        public DbSet<Etape> Etape { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -9,7 +9,7 @@ namespace VoilierLibrary
         public Voilier Voilier = new Voilier("katari",4,10.894221F,"tesla",15.4F,150,1400,14.2);
         
         #region attribut
-        public DateTime dureeCumule { get; private set; }
+        public DateTime duree { get; private set; }
         private List<Penalite> listePenalite = new List<Penalite>();
         private List<Etape> listeEtape = new List<Etape>();
         public Course course;

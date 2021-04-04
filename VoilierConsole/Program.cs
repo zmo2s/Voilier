@@ -56,30 +56,30 @@ namespace mysqlefcore
                 context.Database.EnsureCreated();
 
                 // Adds a publisher
-                var publisher = new Etape
+                var etape = new Etape
                 {
                     Name = "Mariner Books"
                 };
-                context.Publisher.Add(publisher);
+                context.Etape.Add(etape);
 
                 // Adds some books
                 context.Course.Add(new Course
                 {
-                    ISBN = "978-0545540035415",
+                    ISBN = "978-05455400354155",
                     Title = "The Lord of the Rings",
                     Author = "J.R.R. Tolkien",
                     Language = "English",
                     Pages = 1216,
-                    Etape = publisher
+                    Etape = etape
                 });
                 context.Course.Add(new Course
                 {
-                    ISBN = "978-0555475247762",
+                    ISBN = "978-05554755247762",
                     Title = "The Sealed Letter",
                     Author = "Emma Donoghue",
                     Language = "English",
                     Pages = 416,
-                    Etape = publisher
+                    Etape = etape
                 });
 
                 // Saves changes
@@ -99,7 +99,7 @@ namespace mysqlefcore
                     var data = new StringBuilder();
                     data.AppendLine($"ISBN: {book.ISBN}");
                     data.AppendLine($"Title: {book.Title}");
-                    data.AppendLine($"Publisher: {book.Etape.Name}");
+                    data.AppendLine($"Etape: {book.Etape.Name}");
                     Console.WriteLine(data.ToString());
                 }
             }
