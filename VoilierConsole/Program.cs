@@ -36,6 +36,7 @@ namespace VoilierConsole
 
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Linq;
 using System.Text;
 using ConsoleApp1.Voilier1;
 using NetTopologySuite.LinearReferencing;
@@ -46,72 +47,19 @@ namespace mysqlefcore
     {
         static void Main(string[] args)
         {
-          //  InsertData();
-          //  PrintData();
 
-             GestionVoilier model = new GestionVoilier();
-             Personne henri = new Personne(2,"to","leo",23,14,"ddd","dd");
-             
+             mydbContext model1 = new mydbContext();
+             GestionPersonne model = new GestionPersonne();
+             Personne henri = new Personne(6,"to","leo",23,14,"ddd","dd");
+             model.SupprimerPersonne(6);
              model.AjouterPersonne(henri);
+             var liste = from f in model1.Personne select f;
+             model.DisplayPersonne(liste.ToList());
+             
+
 
 
         }
 
-        private static void InsertData()
-        {
-            using(var context = new Voilier())
-            {
-                // Creates the database if not exists
-                context.Database.EnsureCreated();
-
-                // Adds a publisher
-                var etape = new Etape
-                {
-                    Name = "Mariner Books"
-                };
-                context.Etape.Add(etape);
-
-                // Adds some books
-                context.Course.Add(new Course
-                {
-                    ISBN = "978-05455400354g15g5",
-                    Title = "The Lord of the Rings",
-                    Author = "J.R.R. Tolkien",
-                    Language = "English",
-                    Pages = 1216,
-                    Etape = etape
-                });
-                context.Course.Add(new Course
-                {
-                    ISBN = "978-05554h75g5247762",
-                    Title = "The Sealed Letter",
-                    Author = "Emma Donoghue",
-                    Language = "English",
-                    Pages = 416,
-                    Etape = etape
-                });
-
-                // Saves changes
-                context.SaveChanges();
-            }
-        }
-
-        private static void PrintData()
-        {
-            // Gets and prints all books in database
-            using (var context = new Voilier())
-            {
-                var books = context.Course
-                    .Include(p => p.Etape);
-                foreach(var book in books)
-                {
-                    var data = new StringBuilder();
-                    data.AppendLine($"ISBN: {book.ISBN}");
-                    data.AppendLine($"Title: {book.Title}");
-                    data.AppendLine($"Etape: {book.Etape.Name}");
-                    Console.WriteLine(data.ToString());
-                }
-            }
-        }
     }
 }          
