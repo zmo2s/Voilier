@@ -98,3 +98,7 @@
 /home/antonin/Documents/voilier/ClassLibrary1/VoilierConsole/bin/Debug/netcoreapp3.1/Renci.SshNet.dll
 /home/antonin/Documents/voilier/ClassLibrary1/VoilierConsole/bin/Debug/netcoreapp3.1/SshNet.Security.Cryptography.dll
 /home/antonin/Documents/voilier/ClassLibrary1/VoilierConsole/bin/Debug/netcoreapp3.1/System.Xml.XPath.XmlDocument.dll
+/home/antonin/Documents/voilier/ClassLibrary1/VoilierConsole/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.dll
+/home/antonin/Documents/voilier/ClassLibrary1/VoilierConsole/bin/Debug/netcoreapp3.1/NetTopologySuite.dll
+/home/antonin/Documents/voilier/ClassLibrary1/VoilierConsole/bin/Debug/netcoreapp3.1/NetTopologySuite.IO.SqlServerBytes.dll
+/home/antonin/Documents/voilier/ClassLibrary1/VoilierConsole/obj/Debug/netcoreapp3.1/EFCoreSqlServerNetTopologySuite.cs

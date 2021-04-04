@@ -37,6 +37,8 @@ namespace VoilierConsole
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Text;
+using ConsoleApp1.Voilier1;
+using NetTopologySuite.LinearReferencing;
 
 namespace mysqlefcore
 {
@@ -44,8 +46,15 @@ namespace mysqlefcore
     {
         static void Main(string[] args)
         {
-            InsertData();
-            PrintData();
+          //  InsertData();
+          //  PrintData();
+
+             GestionVoilier model = new GestionVoilier();
+             Personne henri = new Personne(2,"to","leo",23,14,"ddd","dd");
+             
+             model.AjouterPersonne(henri);
+
+
         }
 
         private static void InsertData()
@@ -65,7 +74,7 @@ namespace mysqlefcore
                 // Adds some books
                 context.Course.Add(new Course
                 {
-                    ISBN = "978-05455400354155",
+                    ISBN = "978-05455400354g15g5",
                     Title = "The Lord of the Rings",
                     Author = "J.R.R. Tolkien",
                     Language = "English",
@@ -74,7 +83,7 @@ namespace mysqlefcore
                 });
                 context.Course.Add(new Course
                 {
-                    ISBN = "978-05554755247762",
+                    ISBN = "978-05554h75g5247762",
                     Title = "The Sealed Letter",
                     Author = "Emma Donoghue",
                     Language = "English",

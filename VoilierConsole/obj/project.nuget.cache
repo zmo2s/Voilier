@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "t1xVvQ/FGHSp6YvH3/4UV6pVCwwcy6pcKSifpdVK72UvHMjvyRMHy3snyIdnwYcy3c4/CkfX23Oa/gxE9a9OyA==",
+  "dgSpecHash": "Gy88Xl/MJNUWUQQ0TE2n5CsGGZ6im+9fmm+9at/d95WoX/O3NxklKCtNEoya7Uw2cuhNBSswDEydRYhTMS3jkA==",
   "success": true,
   "projectFilePath": "/home/antonin/Documents/voilier/ClassLibrary1/VoilierConsole/VoilierConsole.csproj",
   "expectedPackageFiles": [
@@ -20,6 +20,7 @@
     "/home/antonin/.nuget/packages/microsoft.entityframeworkcore.design/3.1.9/microsoft.entityframeworkcore.design.3.1.9.nupkg.sha512",
     "/home/antonin/.nuget/packages/microsoft.entityframeworkcore.relational/3.1.9/microsoft.entityframeworkcore.relational.3.1.9.nupkg.sha512",
     "/home/antonin/.nuget/packages/microsoft.entityframeworkcore.sqlserver/3.1.5/microsoft.entityframeworkcore.sqlserver.3.1.5.nupkg.sha512",
+    "/home/antonin/.nuget/packages/microsoft.entityframeworkcore.sqlserver.nettopologysuite/3.1.0/microsoft.entityframeworkcore.sqlserver.nettopologysuite.3.1.0.nupkg.sha512",
     "/home/antonin/.nuget/packages/microsoft.extensions.caching.abstractions/3.1.9/microsoft.extensions.caching.abstractions.3.1.9.nupkg.sha512",
     "/home/antonin/.nuget/packages/microsoft.extensions.caching.memory/3.1.9/microsoft.extensions.caching.memory.3.1.9.nupkg.sha512",
     "/home/antonin/.nuget/packages/microsoft.extensions.configuration/3.1.9/microsoft.extensions.configuration.3.1.9.nupkg.sha512",
@@ -40,6 +41,8 @@
     "/home/antonin/.nuget/packages/mysql.data/8.0.22/mysql.data.8.0.22.nupkg.sha512",
     "/home/antonin/.nuget/packages/mysql.data.entityframeworkcore/8.0.22/mysql.data.entityframeworkcore.8.0.22.nupkg.sha512",
     "/home/antonin/.nuget/packages/netstandard.library/1.6.0/netstandard.library.1.6.0.nupkg.sha512",
+    "/home/antonin/.nuget/packages/nettopologysuite/2.0.0/nettopologysuite.2.0.0.nupkg.sha512",
+    "/home/antonin/.nuget/packages/nettopologysuite.io.sqlserverbytes/2.0.0/nettopologysuite.io.sqlserverbytes.2.0.0.nupkg.sha512",
     "/home/antonin/.nuget/packages/runtime.native.system/4.3.0/runtime.native.system.4.3.0.nupkg.sha512",
     "/home/antonin/.nuget/packages/runtime.native.system.data.sqlclient.sni/4.7.0/runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "/home/antonin/.nuget/packages/runtime.native.system.io.compression/4.1.0/runtime.native.system.io.compression.4.1.0.nupkg.sha512",
