@@ -2,15 +2,15 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace ConsoleApp1.Voilier1
+namespace ConsoleApp1.voilier
 {
-    public partial class mydbContext : DbContext
+    public partial class voilier1Context : DbContext
     {
-        public mydbContext()
+        public voilier1Context()
         {
         }
 
-        public mydbContext(DbContextOptions<mydbContext> options)
+        public voilier1Context(DbContextOptions<voilier1Context> options)
             : base(options)
         {
         }
@@ -41,8 +41,11 @@ namespace ConsoleApp1.Voilier1
                 entity.HasIndex(e => e.EtapeIdEtape)
                     .HasName("fk_Course_Etape_idx");
 
-                entity.HasIndex(e => new { e.VoilierEtapeIdVoilierEtape, e.VoilierEtapeVoilierIdVoilier })
+                entity.HasIndex(e => e.VoilierEtapeIdVoilierEtape)
                     .HasName("fk_Course_VoilierEtape1_idx");
+
+                entity.HasIndex(e => e.VoilierIdVoilier)
+                    .HasName("fk_Course_Voilier1_idx");
 
                 entity.Property(e => e.IdCourse).HasColumnName("idCourse");
 
@@ -54,19 +57,22 @@ namespace ConsoleApp1.Voilier1
 
                 entity.Property(e => e.VoilierEtapeIdVoilierEtape).HasColumnName("VoilierEtape_idVoilierEtape");
 
-                entity.Property(e => e.VoilierEtapeVoilierIdVoilier).HasColumnName("VoilierEtape_Voilier_idVoilier");
+                entity.Property(e => e.VoilierIdVoilier).HasColumnName("Voilier_idVoilier");
 
                 entity.HasOne(d => d.EtapeIdEtapeNavigation)
                     .WithMany(p => p.Course)
                     .HasForeignKey(d => d.EtapeIdEtape)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_Course_Etape");
 
-                entity.HasOne(d => d.VoilierEtape)
+                entity.HasOne(d => d.VoilierEtapeIdVoilierEtapeNavigation)
                     .WithMany(p => p.Course)
-                    .HasForeignKey(d => new { d.VoilierEtapeIdVoilierEtape, d.VoilierEtapeVoilierIdVoilier })
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasForeignKey(d => d.VoilierEtapeIdVoilierEtape)
                     .HasConstraintName("fk_Course_VoilierEtape1");
+
+                entity.HasOne(d => d.VoilierIdVoilierNavigation)
+                    .WithMany(p => p.Course)
+                    .HasForeignKey(d => d.VoilierIdVoilier)
+                    .HasConstraintName("fk_Course_Voilier1");
             });
 
             modelBuilder.Entity<Etape>(entity =>
@@ -74,8 +80,11 @@ namespace ConsoleApp1.Voilier1
                 entity.HasKey(e => e.IdEtape)
                     .HasName("PRIMARY");
 
-                entity.HasIndex(e => new { e.VoilierEtapeIdVoilierEtape, e.VoilierEtapeVoilierIdVoilier })
+                entity.HasIndex(e => e.VoilierEtapeIdVoilierEtape)
                     .HasName("fk_Etape_VoilierEtape1_idx");
+
+                entity.HasIndex(e => e.VoilierIdVoilier)
+                    .HasName("fk_Etape_Voilier1_idx");
 
                 entity.Property(e => e.IdEtape).HasColumnName("idEtape");
 
@@ -87,13 +96,17 @@ namespace ConsoleApp1.Voilier1
 
                 entity.Property(e => e.VoilierEtapeIdVoilierEtape).HasColumnName("VoilierEtape_idVoilierEtape");
 
-                entity.Property(e => e.VoilierEtapeVoilierIdVoilier).HasColumnName("VoilierEtape_Voilier_idVoilier");
+                entity.Property(e => e.VoilierIdVoilier).HasColumnName("Voilier_idVoilier");
 
-                entity.HasOne(d => d.VoilierEtape)
+                entity.HasOne(d => d.VoilierEtapeIdVoilierEtapeNavigation)
                     .WithMany(p => p.Etape)
-                    .HasForeignKey(d => new { d.VoilierEtapeIdVoilierEtape, d.VoilierEtapeVoilierIdVoilier })
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasForeignKey(d => d.VoilierEtapeIdVoilierEtape)
                     .HasConstraintName("fk_Etape_VoilierEtape1");
+
+                entity.HasOne(d => d.VoilierIdVoilierNavigation)
+                    .WithMany(p => p.Etape)
+                    .HasForeignKey(d => d.VoilierIdVoilier)
+                    .HasConstraintName("fk_Etape_Voilier1");
             });
 
             modelBuilder.Entity<Penalite>(entity =>
@@ -102,6 +115,10 @@ namespace ConsoleApp1.Voilier1
                     .HasName("PRIMARY");
 
                 entity.Property(e => e.IdPenalite).HasColumnName("idPenalite");
+
+                entity.Property(e => e.Latitude).HasColumnName("latitude");
+
+                entity.Property(e => e.Longitude).HasColumnName("longitude");
 
                 entity.Property(e => e.Name)
                     .HasMaxLength(45)
@@ -155,13 +172,12 @@ namespace ConsoleApp1.Voilier1
                 entity.HasOne(d => d.PersonneIdPersonneNavigation)
                     .WithMany(p => p.Voilier)
                     .HasForeignKey(d => d.PersonneIdPersonne)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_Voilier_Personne1");
             });
 
             modelBuilder.Entity<VoilierEtape>(entity =>
             {
-                entity.HasKey(e => new { e.IdVoilierEtape, e.VoilierIdVoilier })
+                entity.HasKey(e => e.IdVoilierEtape)
                     .HasName("PRIMARY");
 
                 entity.HasIndex(e => e.PenaliteIdPenalite)
@@ -172,20 +188,20 @@ namespace ConsoleApp1.Voilier1
 
                 entity.Property(e => e.IdVoilierEtape).HasColumnName("idVoilierEtape");
 
-                entity.Property(e => e.VoilierIdVoilier).HasColumnName("Voilier_idVoilier");
+                entity.Property(e => e.DateFin).HasColumnName("DateFIn");
 
                 entity.Property(e => e.PenaliteIdPenalite).HasColumnName("Penalite_idPenalite");
+
+                entity.Property(e => e.VoilierIdVoilier).HasColumnName("Voilier_idVoilier");
 
                 entity.HasOne(d => d.PenaliteIdPenaliteNavigation)
                     .WithMany(p => p.VoilierEtape)
                     .HasForeignKey(d => d.PenaliteIdPenalite)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_VoilierEtape_Penalite1");
 
                 entity.HasOne(d => d.VoilierIdVoilierNavigation)
                     .WithMany(p => p.VoilierEtape)
                     .HasForeignKey(d => d.VoilierIdVoilier)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_VoilierEtape_Voilier1");
             });
 

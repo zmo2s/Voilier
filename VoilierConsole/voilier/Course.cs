@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ConsoleApp1.Voilier1
+namespace ConsoleApp1.voilier
 {
     public partial class Course
     {
-        public Course(int idCourse, string nom, int etapeIdEtape, int voilierEtapeIdVoilierEtape, int voilierEtapeVoilierIdVoilier)
+        public Course(int idCourse, string nom, int etapeIdEtape, DateTime? dureeCumuleBrute, DateTime? dureeCumuleReel, int voilierEtapeIdVoilierEtape, int voilierIdVoilier)
         {
             IdCourse = idCourse;
             Nom = nom;
             EtapeIdEtape = etapeIdEtape;
-        
+            DureeCumuleBrute = dureeCumuleBrute;
+            DureeCumuleReel = dureeCumuleReel;
             VoilierEtapeIdVoilierEtape = voilierEtapeIdVoilierEtape;
-            VoilierEtapeVoilierIdVoilier = voilierEtapeVoilierIdVoilier;
-           
-          
+            VoilierIdVoilier = voilierIdVoilier;
         }
 
         public int IdCourse { get; set; }
@@ -23,9 +22,10 @@ namespace ConsoleApp1.Voilier1
         public DateTime? DureeCumuleBrute { get; set; }
         public DateTime? DureeCumuleReel { get; set; }
         public int VoilierEtapeIdVoilierEtape { get; set; }
-        public int VoilierEtapeVoilierIdVoilier { get; set; }
+        public int VoilierIdVoilier { get; set; }
 
         public virtual Etape EtapeIdEtapeNavigation { get; set; }
-        public virtual VoilierEtape VoilierEtape { get; set; }
+        public virtual VoilierEtape VoilierEtapeIdVoilierEtapeNavigation { get; set; }
+        public virtual Voilier VoilierIdVoilierNavigation { get; set; }
     }
 }

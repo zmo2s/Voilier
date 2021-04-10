@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using ConsoleApp1.voilier;
 using ConsoleApp1.Voilier1;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,7 +8,7 @@ namespace mysqlefcore
 {
     public class GestionPersonne
     {
-        private mydbContext model = new mydbContext();
+        private voilier1Context model = new voilier1Context();
         public Personne AjouterPersonne(Personne personne)
         {
             // Ajoute le produit à l'ORM EF

@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ConsoleApp1.Voilier1
+namespace ConsoleApp1.voilier
 {
     public partial class Voilier
     {
         public Voilier()
         {
+            Course = new HashSet<Course>();
+            Etape = new HashSet<Etape>();
             VoilierEtape = new HashSet<VoilierEtape>();
         }
 
-        public Voilier(int idVoilier, string name, int? nbrPlace, float? prix, string marque, float? vitesse, float? poids, double? latitude, double? longitude, int personneIdPersonne)
+        public Voilier(int idVoilier, string name, int? nbrPlace, float? prix, string marque, float? vitesse, double? latitude, double? longitude, int personneIdPersonne)
         {
             IdVoilier = idVoilier;
             Name = name;
@@ -18,7 +20,6 @@ namespace ConsoleApp1.Voilier1
             Prix = prix;
             Marque = marque;
             Vitesse = vitesse;
-            Poids = poids;
             Latitude = latitude;
             Longitude = longitude;
             PersonneIdPersonne = personneIdPersonne;
@@ -36,6 +37,8 @@ namespace ConsoleApp1.Voilier1
         public int PersonneIdPersonne { get; set; }
 
         public virtual Personne PersonneIdPersonneNavigation { get; set; }
+        public virtual ICollection<Course> Course { get; set; }
+        public virtual ICollection<Etape> Etape { get; set; }
         public virtual ICollection<VoilierEtape> VoilierEtape { get; set; }
     }
 }

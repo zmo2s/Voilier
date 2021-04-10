@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using ConsoleApp1.voilier;
 using ConsoleApp1.Voilier1;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,7 +8,7 @@ namespace ConsoleApp1.Voilier1
 {
     public class GestionCourse
     {
-        private mydbContext model = new mydbContext();
+        private voilier1Context model = new voilier1Context();
 
         public Course AjouterCourse(Course course)
         {
@@ -24,7 +25,7 @@ namespace ConsoleApp1.Voilier1
             foreach (Course Course in liste)
             {
                 Console.WriteLine("{0} réalisé par {1} {2} {3} {4} {5} ", Course.IdCourse, Course.Nom,
-                    Course.VoilierEtape, Course.DureeCumuleBrute, Course.DureeCumuleReel, Course.EtapeIdEtape);
+                    Course.VoilierIdVoilier, Course.DureeCumuleBrute, Course.DureeCumuleReel, Course.EtapeIdEtape);
             }
         }
 

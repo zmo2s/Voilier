@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
+using ConsoleApp1.voilier;
 using ConsoleApp1.Voilier1;
 using Microsoft.EntityFrameworkCore;
 namespace ConsoleApp1
 {
     public class GestionEtape
     {
-        private mydbContext model = new mydbContext();
+        private voilier1Context model = new voilier1Context();
         public Etape AjouterEtape(Etape Etape)
         {
             // Ajoute le produit à l'ORM EF
@@ -21,7 +22,7 @@ namespace ConsoleApp1
         {
             foreach (Etape Etape in liste)
             {
-                Console.WriteLine("{0} réalisé par {1} {2} {3} {4} {5} ",Etape.IdEtape,Etape.Nom,Etape.DateDebut,Etape.DateFin,Etape.VoilierEtapeIdVoilierEtape,Etape.VoilierEtapeVoilierIdVoilier);
+                Console.WriteLine("{0} réalisé par {1} {2} {3} {4} {5} ",Etape.IdEtape,Etape.Nom,Etape.DateDebut,Etape.DateFin,Etape.VoilierEtapeIdVoilierEtape,Etape.VoilierIdVoilier);
             }
         }
          

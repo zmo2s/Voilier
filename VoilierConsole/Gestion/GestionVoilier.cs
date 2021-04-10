@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using ConsoleApp1.voilier;
 using ConsoleApp1.Voilier1;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,7 +10,7 @@ namespace ConsoleApp1
     {
        
         
-            private mydbContext model = new mydbContext();
+        private voilier1Context model = new voilier1Context();
 
             public Voilier AjouterVoilier(Voilier Voilier)
             {
