@@ -1,0 +1,9 @@
+/home/antonin/Documents/voilier/ClassLibrary1/ClassLibrary1/bin/Debug/netcoreapp3.1/ClassLibrary1.deps.json
+/home/antonin/Documents/voilier/ClassLibrary1/ClassLibrary1/bin/Debug/netcoreapp3.1/ClassLibrary1.dll
+/home/antonin/Documents/voilier/ClassLibrary1/ClassLibrary1/bin/Debug/netcoreapp3.1/ClassLibrary1.pdb
+/home/antonin/Documents/voilier/ClassLibrary1/ClassLibrary1/obj/Debug/netcoreapp3.1/ClassLibrary1.csprojAssemblyReference.cache
+/home/antonin/Documents/voilier/ClassLibrary1/ClassLibrary1/obj/Debug/netcoreapp3.1/ClassLibrary1.AssemblyInfoInputs.cache
+/home/antonin/Documents/voilier/ClassLibrary1/ClassLibrary1/obj/Debug/netcoreapp3.1/ClassLibrary1.AssemblyInfo.cs
+/home/antonin/Documents/voilier/ClassLibrary1/ClassLibrary1/obj/Debug/netcoreapp3.1/ClassLibrary1.csproj.CoreCompileInputs.cache
+/home/antonin/Documents/voilier/ClassLibrary1/ClassLibrary1/obj/Debug/netcoreapp3.1/ClassLibrary1.dll
+/home/antonin/Documents/voilier/ClassLibrary1/ClassLibrary1/obj/Debug/netcoreapp3.1/ClassLibrary1.pdb
