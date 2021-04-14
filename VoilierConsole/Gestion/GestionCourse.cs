@@ -9,6 +9,7 @@ namespace ConsoleApp1.Voilier1
     public class GestionCourse
     {
         private voilier1Context model = new voilier1Context();
+        private List<Etape> listeEtape = new List<Etape>();
 
         public Course AjouterCourse(Course course)
         {
@@ -27,6 +28,17 @@ namespace ConsoleApp1.Voilier1
                 Console.WriteLine("{0} réalisé par {1} {2} {3} {4} {5} ", Course.IdCourse, Course.Nom,
                     Course.VoilierIdVoilier, Course.DureeCumuleBrute, Course.DureeCumuleReel, Course.EtapeIdEtape);
             }
+        }
+        
+        public int GetIdEtape(List<Course> liste)
+        {
+            int idEtape = 0;
+            foreach (Course Course in liste)
+            {
+                idEtape = Course.EtapeIdEtape;
+            }
+
+            return idEtape;
         }
 
 
@@ -62,6 +74,38 @@ namespace ConsoleApp1.Voilier1
             }
 
             return false;
+        }
+        
+        public String DureeCumuleBruteTotal()
+        {
+            int jour = 0;
+            int minute = 0;
+            int heure = 0;
+            
+            ///DateTime date= DateTime.Now;
+
+            foreach (Etape etape in listeEtape)
+            {
+                jour += etape.DateFin.Subtract(etape.DateDebut).Days;
+                minute += etape.DateFin.Subtract(etape.DateDebut).Minutes;
+                heure += etape.DateFin.Subtract(etape.DateDebut).Hours;
+            }
+                
+            return string.Format("jour {0}, heure {1}, minute {2}", jour, heure,minute);
+
+        }
+
+        public Double DureeCumuleReelTotal(DateTime DureeCumuleBrute,DateTime DureePenalite)
+        {
+            return (DureeCumuleBrute - DureePenalite).TotalHours;
+        }
+        
+        static void AfficherCourse(List<Course> course)
+        {
+            foreach (Course element in course)
+            {
+                Console.WriteLine(element.Nom);   
+            }
         }
     }
 }

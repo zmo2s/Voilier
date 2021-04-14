@@ -10,7 +10,7 @@ namespace ConsoleApp1.voilier
             Course = new HashSet<Course>();
         }
 
-        public Etape(int idEtape, string nom, DateTime? dateDebut, DateTime? dateFin, int voilierEtapeIdVoilierEtape, int voilierIdVoilier)
+        public Etape(int idEtape, string nom, DateTime dateDebut, DateTime dateFin, int voilierEtapeIdVoilierEtape, int voilierIdVoilier)
         {
             IdEtape = idEtape;
             Nom = nom;
@@ -22,8 +22,8 @@ namespace ConsoleApp1.voilier
 
         public int IdEtape { get; set; }
         public string Nom { get; set; }
-        public DateTime? DateDebut { get; set; }
-        public DateTime? DateFin { get; set; }
+        public DateTime DateDebut { get; set; }
+        public DateTime DateFin { get; set; }
         public int VoilierEtapeIdVoilierEtape { get; set; }
         public int VoilierIdVoilier { get; set; }
 

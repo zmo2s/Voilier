@@ -77,17 +77,20 @@ namespace ConsoleApp1.voilier
              var listePenalite = from f in model1.Penalite select f;
              modelGestionPenalite.DisplayPenalite(listePenalite.ToList());
              
-             DateTime etape1Time = new DateTime(2020, 3, 9, 9, 0, 0);
+             DateTime etape1Time = new DateTime(2020, 3, 2, 0, 0, 0);
              
              GestionVoilierEtape modelGestionVoilierEtape = new GestionVoilierEtape();
-             DateTime tempsEtape = new DateTime(2020,1,2,3,2,3);
-             VoilierEtape voilierEtape = new VoilierEtape(10,tempsEtape,5,7,etape1Time,etape1Time);
-             modelGestionVoilierEtape.SupprimerVoilierEtape(8);
+             DateTime tempsEtape = new DateTime(2020,3,3,13,1,1);
+             VoilierEtape voilierEtape = new VoilierEtape(10,tempsEtape,5,7,etape1Time,tempsEtape);
+             VoilierEtape voilierEtape1 = new VoilierEtape(11,tempsEtape,5,7,etape1Time,tempsEtape);
+             modelGestionVoilierEtape.SupprimerVoilierEtape(10);
+             modelGestionVoilierEtape.SupprimerVoilierEtape(11);
             modelGestionVoilierEtape.AjouterVoilierEtape(voilierEtape);
+            modelGestionVoilierEtape.AjouterVoilierEtape(voilierEtape1);
              var listeVoilierEtapes = from f in model1.VoilierEtape select f;
              modelGestionVoilierEtape.DisplayVoilierEtape(listeVoilierEtapes.ToList());
-             
-             
+
+         
 
              
              
@@ -113,6 +116,34 @@ namespace ConsoleApp1.voilier
              modelGestionCourse.DisplayCourse(listeCourse.ToList());
              //courseFrance.AfficherEtape();
              //Console.WriteLine(courseFrance.DureeCumuleBruteTotal());
+
+             IQueryable<Course> Zerodium = model1.Course;
+             Zerodium = Zerodium.Where(a => a.IdCourse == 1);
+             modelGestionCourse.DisplayCourse(Zerodium.ToList());
+             Console.WriteLine(modelGestionCourse.GetIdEtape(Zerodium.ToList()));
+
+
+             IQueryable<VoilierEtape> Zerodium1 = model1.VoilierEtape;
+             Zerodium1 = Zerodium1.Where(a => a.PenaliteIdPenalite == 5);
+             modelGestionVoilierEtape.DisplayCourse(Zerodium1.ToList());
+             Console.WriteLine(modelGestionVoilierEtape.DureeCumuleBruteTotal1(Zerodium1.ToList()));
+             Console.WriteLine(modelGestionVoilierEtape.TimeRecursion(120));
+
+
+
+
+             // var listeCourse1 = from f in model1.Course where f.IdCourse==1 select f.EtapeIdEtape;
+             // a = (int) listeCourse1;
+             //Console.WriteLine(listeCourse1.Expression);
+
+
+
+
+
+
+
+
+
 
 
         }

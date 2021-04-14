@@ -11,7 +11,7 @@ namespace ConsoleApp1
        
         
         private voilier1Context model = new voilier1Context();
-
+        private List<VoilierEtape> listeEtape = new List<VoilierEtape>();
             public VoilierEtape AjouterVoilierEtape(VoilierEtape VoilierEtape)
             {
                 // Ajoute le produit à l'ORM EF
@@ -65,5 +65,66 @@ namespace ConsoleApp1
 
                 return false;
             }
+            public void DisplayCourse(List<VoilierEtape> liste)
+            {
+                foreach (VoilierEtape voilierEtape in liste)
+                {
+                    Console.WriteLine("{0} réalisé par {1} {2}  ", voilierEtape.Course,voilierEtape.DateDebut,voilierEtape.DateFin);
+                }
+            }
+            
+            
+            public String DureeCumuleBruteTotal1(List<VoilierEtape> liste)
+            {
+                int jour = 0;
+                int minute = 0;
+                int heure = 0;
+            
+                ///DateTime date= DateTime.Now;
+
+                foreach (VoilierEtape etape in liste)
+                {
+                    
+                    jour += etape.DateFin.Subtract(etape.DateDebut).Days;
+                    minute += etape.DateFin.Subtract(etape.DateDebut).Minutes;
+                    heure += etape.DateFin.Subtract(etape.DateDebut).Hours;
+                   
+                }
+
+                if (minute >= 60)
+                {
+                    heure += TimeRecursion(minute);
+                    
+                    minute = minute % 60; 
+                }
+
+                if (heure >= 24)
+                {
+                    jour += JourRecursion(heure);
+                    heure = heure % 24;
+
+                }
+                
+                
+                return string.Format("jour {0}, heure {1}, minute {2}", jour, heure,minute);
+
+            }
+
+            public int TimeRecursion(int time)
+            {
+                return time >= 60 ? 1 + TimeRecursion(time - 60):0;
+            }
+            
+            public int JourRecursion(int time)
+            {
+                return time >= 24 ? 1 + TimeRecursion(time - 24):0;
+            }
+            
+            public int AnneeJourRecursion(int time)
+            {
+                return time >= 365 ? 1 + TimeRecursion(time - 365):0;
+            }
+            
+            
         }
     }
