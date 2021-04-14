@@ -128,7 +128,7 @@ namespace ConsoleApp1.voilier
              modelGestionVoilierEtape.DisplayCourse(Zerodium1.ToList());
              Console.WriteLine(modelGestionVoilierEtape.DureeCumuleBruteTotal1(Zerodium1.ToList()));
              Console.WriteLine(modelGestionVoilierEtape.TimeRecursion(120));
-
+             Console.WriteLine(modelGestionVoilierEtape.DureeCumuleReel1(modelGestionVoilierEtape.DureeCumuleBruteTotal2(Zerodium1.ToList()), listePenalite.ToList()));
 
 
 

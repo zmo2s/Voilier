@@ -10,7 +10,7 @@ namespace ConsoleApp1.voilier
             VoilierEtape = new HashSet<VoilierEtape>();
         }
 
-        public Penalite(int idPenalite, string name, TimeSpan? duree, double? latitude, double? longitude)
+        public Penalite(int idPenalite, string name, TimeSpan duree, double? latitude, double? longitude)
         {
             IdPenalite = idPenalite;
             Name = name;
@@ -21,7 +21,7 @@ namespace ConsoleApp1.voilier
 
         public int IdPenalite { get; set; }
         public string Name { get; set; }
-        public TimeSpan? Duree { get; set; }
+        public TimeSpan Duree { get; set; }
         public double? Latitude { get; set; }
         public double? Longitude { get; set; }
 
