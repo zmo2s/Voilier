@@ -127,8 +127,7 @@ namespace ConsoleApp1
                 int minute = 0;
                 int heure = 0;
                 int seconde = 0;
-            
-                ///DateTime date= DateTime.Now;
+
 
                 foreach (VoilierEtape etape in liste)
                 {

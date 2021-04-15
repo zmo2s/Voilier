@@ -76,29 +76,89 @@ namespace ConsoleApp1.Voilier1
             return false;
         }
         
-        public String DureeCumuleBruteTotal()
-        {
-            int jour = 0;
-            int minute = 0;
-            int heure = 0;
-            
-            ///DateTime date= DateTime.Now;
-
-            foreach (Etape etape in listeEtape)
+         public TimeSpan DureeCumuleBruteTotal2(List<VoilierEtape> liste)
             {
-                jour += etape.DateFin.Subtract(etape.DateDebut).Days;
-                minute += etape.DateFin.Subtract(etape.DateDebut).Minutes;
-                heure += etape.DateFin.Subtract(etape.DateDebut).Hours;
-            }
+                int jour = 0;
+                int minute = 0;
+                int heure = 0;
+                int seconde = 0;
+
+
+                foreach (VoilierEtape etape in liste)
+                {
+                    
+                    jour += etape.DateFin.Subtract(etape.DateDebut).Days;
+                    minute += etape.DateFin.Subtract(etape.DateDebut).Minutes;
+                    heure += etape.DateFin.Subtract(etape.DateDebut).Hours;
+                    seconde += etape.DateFin.Subtract(etape.DateDebut).Seconds;
+                   
+                }
+                if (seconde >= 60)
+                {
+                    minute += TimeRecursion(seconde);
+                    
+                    seconde = seconde % 60; 
+                }
                 
-            return string.Format("jour {0}, heure {1}, minute {2}", jour, heure,minute);
+                if (minute >= 60)
+                {
+                    heure += TimeRecursion(minute);
+                    
+                    minute = minute % 60; 
+                }
 
-        }
+                if (heure >= 24)
+                {
+                    jour += JourRecursion(heure);
+                    heure = heure % 24;
 
-        public Double DureeCumuleReelTotal(DateTime DureeCumuleBrute,DateTime DureePenalite)
-        {
-            return (DureeCumuleBrute - DureePenalite).TotalHours;
-        }
+                }
+
+
+                TimeSpan resultat= new TimeSpan(jour, heure, minute,seconde);
+                return resultat;
+            }
+
+            public int TimeRecursion(int time)
+            {
+                return time >= 60 ? 1 + TimeRecursion(time - 60):0;
+            }
+            
+            public int JourRecursion(int time)
+            {
+                return time >= 24 ? 1 + TimeRecursion(time - 24):0;
+            }
+            
+            public int AnneeJourRecursion(int time)
+            {
+                return time >= 365 ? 1 + TimeRecursion(time - 365):0;
+            }
+
+
+            public TimeSpan DureeCumuleReel(TimeSpan dureeCumuleBrute, List<Penalite> listePenalites)
+            {
+                TimeSpan span = new TimeSpan(0, 0, 0, 0);
+                foreach (Penalite penalite in listePenalites)
+                {
+                    span.Add(penalite.Duree);
+                }
+
+                span.Add(dureeCumuleBrute);
+                return span;
+            }
+            
+            public String DureeCumuleReel1(TimeSpan dureeCumuleBrute, List<Penalite> listePenalites)
+            {
+                TimeSpan span = new TimeSpan(0, 0, 0, 0);
+                foreach (Penalite penalite in listePenalites)
+                {
+                   span = span.Add(penalite.Duree);
+                
+                }
+
+                span = span.Add(dureeCumuleBrute);
+                return string.Format("jour {0}, heure {1}, minute {2} seconde {3}", span.Days, span.Hours,span.Minutes,span.Seconds);
+            }
         
         static void AfficherCourse(List<Course> course)
         {
