@@ -10,9 +10,12 @@ namespace ConsoleApp1
     public class GestionVoilierEtape
     {
        
-        
+        #region attribut
         private voilier1Context model = new voilier1Context();
         private List<VoilierEtape> listeEtape = new List<VoilierEtape>();
+        #endregion
+        
+        #region CRUD function
             public VoilierEtape AjouterVoilierEtape(VoilierEtape VoilierEtape)
             {
                 // Ajoute le produit à l'ORM EF
@@ -66,6 +69,7 @@ namespace ConsoleApp1
 
                 return false;
             }
+            #endregion
             public void DisplayCourse(List<VoilierEtape> liste)
             {
                 foreach (VoilierEtape voilierEtape in liste)
@@ -74,7 +78,7 @@ namespace ConsoleApp1
                 }
             }
             
-            
+            #region TimeSail
             public String DureeCumuleBruteTotal1(List<VoilierEtape> liste)
             {
                 int jour = 0;
@@ -204,6 +208,7 @@ namespace ConsoleApp1
                 span = span.Add(dureeCumuleBrute);
                 return string.Format("jour {0}, heure {1}, minute {2} seconde {3}", span.Days, span.Hours,span.Minutes,span.Seconds);
             }
+            #endregion
             
         }
     }
