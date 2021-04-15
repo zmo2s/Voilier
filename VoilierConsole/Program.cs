@@ -50,17 +50,20 @@ namespace ConsoleApp1.voilier
     {
         static void Main(string[] args)
         {
-
+         
+            
              voilier1Context model1 = new voilier1Context();
              GestionPersonne modelGestionPersonne = new GestionPersonne();
              Personne henri = new Personne(7,"to","leo",23,14,"ddd","dd");
              
+             //ajotuer uen personne dans la bdd
              
              modelGestionPersonne.SupprimerPersonne(7);
              modelGestionPersonne.AjouterPersonne(henri);
              var listePersonne = from f in model1.Personne select f;
              modelGestionPersonne.DisplayPersonne(listePersonne.ToList());
-
+             
+             //ajouter un voilier dans la bdd
 
              GestionVoilier modelGestionVoilier = new GestionVoilier();
              Voilier LeGrand = new Voilier(7, "legrand", 2, 50000, "albatros", 60, 1500, 50, 7);
@@ -68,7 +71,9 @@ namespace ConsoleApp1.voilier
              modelGestionVoilier.AjouterVoilier(LeGrand);
              var lsiteVoilier = from f in model1.Voilier select f;
              modelGestionVoilier.DisplayVoilier(lsiteVoilier.ToList());
-
+            
+             //ajouter une pénalité dans la bdd
+             
              GestionPenalite modelGestionPenalite = new GestionPenalite();
              TimeSpan teste = new TimeSpan(2, 14, 18);
              Penalite departEnAvance = new Penalite(5, "departEnAvance", teste,10,20.2);
@@ -78,6 +83,7 @@ namespace ConsoleApp1.voilier
              modelGestionPenalite.DisplayPenalite(listePenalite.ToList());
              
              DateTime etape1Time = new DateTime(2020, 3, 2, 0, 0, 0);
+             //ajouter un Voilieretape dans la bdd
              
              GestionVoilierEtape modelGestionVoilierEtape = new GestionVoilierEtape();
              DateTime tempsEtape = new DateTime(2020,3,3,13,1,1);
@@ -92,7 +98,7 @@ namespace ConsoleApp1.voilier
 
          
 
-             
+             //ajouter ybe etape dans la bdd
              
              DateTime etape2Time = new DateTime(2020,3,9,16,30,0);
              DateTime tempsCourse = new DateTime(2020,1,2,3,2,3);
@@ -108,14 +114,14 @@ namespace ConsoleApp1.voilier
 
              //faire en premier personne puis voilier puis pénalite puis idetape puis etape puis course
 
+             //ajouter une course dnas la bdd
              
              Course courseFrance = new Course(1,"course de france ",2,etape1Time,etape2Time,10,7);
              GestionCourse modelGestionCourse = new GestionCourse();
              modelGestionCourse.AjouterCourse(courseFrance);
              var listeCourse = from f in model1.Course select f;
              modelGestionCourse.DisplayCourse(listeCourse.ToList());
-             //courseFrance.AfficherEtape();
-             //Console.WriteLine(courseFrance.DureeCumuleBruteTotal());
+    
 
              IQueryable<Course> Zerodium = model1.Course;
              Zerodium = Zerodium.Where(a => a.IdCourse == 1);
@@ -126,6 +132,9 @@ namespace ConsoleApp1.voilier
              IQueryable<VoilierEtape> Zerodium1 = model1.VoilierEtape;
              Zerodium1 = Zerodium1.Where(a => a.PenaliteIdPenalite == 5);
              modelGestionVoilierEtape.DisplayCourse(Zerodium1.ToList());
+             
+             //affiche la duré de la course pour le voilier toute étape confondu
+             // affiche la duré avec les pénalité du voilier pour toutes étapes confondu
              Console.WriteLine(modelGestionCourse.DureeCumuleBruteTotal1(Zerodium1.ToList()));
              Console.WriteLine(modelGestionCourse.TimeRecursion(120));
              Console.WriteLine(modelGestionCourse.DureeCumuleReel1(modelGestionVoilierEtape.DureeCumuleBruteTotal2(Zerodium1.ToList()), listePenalite.ToList()));
