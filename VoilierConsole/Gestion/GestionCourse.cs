@@ -159,6 +159,52 @@ namespace ConsoleApp1.Voilier1
                 span = span.Add(dureeCumuleBrute);
                 return string.Format("jour {0}, heure {1}, minute {2} seconde {3}", span.Days, span.Hours,span.Minutes,span.Seconds);
             }
+            
+            public String DureeCumuleBruteTotal1(List<VoilierEtape> liste)
+            {
+                int jour = 0;
+                int minute = 0;
+                int heure = 0;
+                int seconde = 0;
+            
+                ///DateTime date= DateTime.Now;
+
+                foreach (VoilierEtape etape in liste)
+                {
+                    
+                    jour += etape.DateFin.Subtract(etape.DateDebut).Days;
+                    minute += etape.DateFin.Subtract(etape.DateDebut).Minutes;
+                    heure += etape.DateFin.Subtract(etape.DateDebut).Hours;
+                    seconde += etape.DateFin.Subtract(etape.DateDebut).Seconds;
+                   
+                }
+                if (seconde >= 60)
+                {
+                    minute += TimeRecursion(seconde);
+                    
+                    seconde = seconde % 60; 
+                }
+                
+                if (minute >= 60)
+                {
+                    heure += TimeRecursion(minute);
+                    
+                    minute = minute % 60; 
+                }
+
+                if (heure >= 24)
+                {
+                    jour += JourRecursion(heure);
+                    heure = heure % 24;
+
+                }
+
+
+        
+                
+                return string.Format("jour {0}, heure {1}, minute {2} seconde {3}", jour, heure,minute,seconde);
+
+            }
         
         static void AfficherCourse(List<Course> course)
         {

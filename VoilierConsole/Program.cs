@@ -126,9 +126,9 @@ namespace ConsoleApp1.voilier
              IQueryable<VoilierEtape> Zerodium1 = model1.VoilierEtape;
              Zerodium1 = Zerodium1.Where(a => a.PenaliteIdPenalite == 5);
              modelGestionVoilierEtape.DisplayCourse(Zerodium1.ToList());
-             Console.WriteLine(modelGestionVoilierEtape.DureeCumuleBruteTotal1(Zerodium1.ToList()));
-             Console.WriteLine(modelGestionVoilierEtape.TimeRecursion(120));
-             Console.WriteLine(modelGestionVoilierEtape.DureeCumuleReel1(modelGestionVoilierEtape.DureeCumuleBruteTotal2(Zerodium1.ToList()), listePenalite.ToList()));
+             Console.WriteLine(modelGestionCourse.DureeCumuleBruteTotal1(Zerodium1.ToList()));
+             Console.WriteLine(modelGestionCourse.TimeRecursion(120));
+             Console.WriteLine(modelGestionCourse.DureeCumuleReel1(modelGestionVoilierEtape.DureeCumuleBruteTotal2(Zerodium1.ToList()), listePenalite.ToList()));
 
 
 
