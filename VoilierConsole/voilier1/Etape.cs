@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ConsoleApp1.voilier
+namespace ConsoleApp1.voilier1
 {
     public partial class Etape
     {
@@ -9,6 +9,7 @@ namespace ConsoleApp1.voilier
         {
             Course = new HashSet<Course>();
         }
+
 
         public Etape(int idEtape, string nom, DateTime dateDebut, DateTime dateFin, int voilierEtapeIdVoilierEtape, int voilierIdVoilier)
         {

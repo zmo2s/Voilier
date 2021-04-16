@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ConsoleApp1.voilier
+namespace ConsoleApp1.voilier1
 {
     public partial class Course
     {

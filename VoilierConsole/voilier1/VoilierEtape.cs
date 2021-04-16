@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ConsoleApp1.voilier
+namespace ConsoleApp1.voilier1
 {
     public partial class VoilierEtape
     {
@@ -11,7 +11,7 @@ namespace ConsoleApp1.voilier
             Etape = new HashSet<Etape>();
         }
 
-        public VoilierEtape(int idVoilierEtape, DateTime? duree, int penaliteIdPenalite, int voilierIdVoilier, DateTime dateDebut, DateTime dateFin)
+        public VoilierEtape(int idVoilierEtape, DateTime duree, int penaliteIdPenalite, int voilierIdVoilier, DateTime dateDebut, DateTime dateFin)
         {
             IdVoilierEtape = idVoilierEtape;
             Duree = duree;
@@ -22,7 +22,7 @@ namespace ConsoleApp1.voilier
         }
 
         public int IdVoilierEtape { get; set; }
-        public DateTime? Duree { get; set; }
+        public DateTime Duree { get; set; }
         public int PenaliteIdPenalite { get; set; }
         public int VoilierIdVoilier { get; set; }
         public DateTime DateDebut { get; set; }

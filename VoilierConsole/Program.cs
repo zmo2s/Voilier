@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using ConsoleApp1;
 using ConsoleApp1.voilier;
+using ConsoleApp1.voilier1;
 using ConsoleApp1.Voilier1;
 using mysqlefcore;
 using NetTopologySuite.LinearReferencing;
@@ -30,7 +31,7 @@ namespace ConsoleApp1.voilier
              //ajouter un voilier dans la bdd
 
              GestionVoilier modelGestionVoilier = new GestionVoilier();
-             Voilier LeGrand = new Voilier(7, "legrand", 2, 50000, "albatros", 60, 1500, 50, 7);
+             Voilier LeGrand = new Voilier(7, "legrand", 2, 50000, "albatros", 60, 1500, 50, 7,7);
              modelGestionVoilier.SupprimerVoilier(7);
              modelGestionVoilier.AjouterVoilier(LeGrand);
              var lsiteVoilier = from f in model1.Voilier select f;

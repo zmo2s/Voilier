@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ConsoleApp1.voilier
+namespace ConsoleApp1.voilier1
 {
     public partial class Voilier
     {
@@ -12,7 +12,7 @@ namespace ConsoleApp1.voilier
             VoilierEtape = new HashSet<VoilierEtape>();
         }
 
-        public Voilier(int idVoilier, string name, int? nbrPlace, float? prix, string marque, float? vitesse, double? latitude, double? longitude, int personneIdPersonne)
+        public Voilier(int idVoilier, string name, int? nbrPlace, float? prix, string marque, float? vitesse, float? poids, double? latitude, double? longitude, int personneIdPersonne)
         {
             IdVoilier = idVoilier;
             Name = name;
@@ -20,6 +20,7 @@ namespace ConsoleApp1.voilier
             Prix = prix;
             Marque = marque;
             Vitesse = vitesse;
+            Poids = poids;
             Latitude = latitude;
             Longitude = longitude;
             PersonneIdPersonne = personneIdPersonne;

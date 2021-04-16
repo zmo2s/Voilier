@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace ConsoleApp1.voilier
+namespace ConsoleApp1.voilier1
 {
     public partial class voilier1Context : DbContext
     {
@@ -52,6 +52,7 @@ namespace ConsoleApp1.voilier
                 entity.Property(e => e.EtapeIdEtape).HasColumnName("Etape_idEtape");
 
                 entity.Property(e => e.Nom)
+                    .IsRequired()
                     .HasMaxLength(45)
                     .IsUnicode(false);
 
@@ -91,6 +92,7 @@ namespace ConsoleApp1.voilier
                 entity.Property(e => e.DateFin).HasColumnName("DateFIn");
 
                 entity.Property(e => e.Nom)
+                    .IsRequired()
                     .HasMaxLength(45)
                     .IsUnicode(false);
 
@@ -121,6 +123,7 @@ namespace ConsoleApp1.voilier
                 entity.Property(e => e.Longitude).HasColumnName("longitude");
 
                 entity.Property(e => e.Name)
+                    .IsRequired()
                     .HasMaxLength(45)
                     .IsUnicode(false);
             });
@@ -137,10 +140,12 @@ namespace ConsoleApp1.voilier
                     .IsUnicode(false);
 
                 entity.Property(e => e.Nom)
+                    .IsRequired()
                     .HasMaxLength(45)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Prenom)
+                    .IsRequired()
                     .HasMaxLength(45)
                     .IsUnicode(false);
 
@@ -164,6 +169,7 @@ namespace ConsoleApp1.voilier
                     .IsUnicode(false);
 
                 entity.Property(e => e.Name)
+                    .IsRequired()
                     .HasMaxLength(45)
                     .IsUnicode(false);
 
