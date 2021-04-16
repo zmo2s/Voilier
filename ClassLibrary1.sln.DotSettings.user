@@ -5,6 +5,6 @@
 &lt;/AssemblyExplorer&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=5e2a1d1d_002Dabb6_002D4553_002Db79f_002Dc4a4ff0922dd/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::3EC865C4-89F1-4C01-890A-4FC65C846568::.NETCoreApp,Version=v3.1::TestProject1.Tests.Test2EntityVoilier&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::3EC865C4-89F1-4C01-890A-4FC65C846568::.NETCoreApp,Version=v3.1::TestProject1.Tests&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
