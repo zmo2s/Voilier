@@ -74,7 +74,6 @@
 /home/antonin/Documents/voilier/ClassLibrary1/VoilierConsole/bin/Debug/netcoreapp3.1/Microsoft.Bcl.AsyncInterfaces.dll
 /home/antonin/Documents/voilier/ClassLibrary1/VoilierConsole/bin/Debug/netcoreapp3.1/Microsoft.Bcl.HashCode.dll
 /home/antonin/Documents/voilier/ClassLibrary1/VoilierConsole/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Abstractions.dll
-/home/antonin/Documents/voilier/ClassLibrary1/VoilierConsole/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Design.dll
 /home/antonin/Documents/voilier/ClassLibrary1/VoilierConsole/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll
 /home/antonin/Documents/voilier/ClassLibrary1/VoilierConsole/bin/Debug/netcoreapp3.1/System.Collections.Immutable.dll
 /home/antonin/Documents/voilier/ClassLibrary1/VoilierConsole/bin/Debug/netcoreapp3.1/System.Diagnostics.DiagnosticSource.dll
