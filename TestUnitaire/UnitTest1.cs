@@ -156,5 +156,16 @@ namespace TestProject1
             Assert.AreEqual(courseFrance.VoilierIdVoilier,listeCourse.ToList()[0].VoilierIdVoilier);
 
         }
+        [Test]
+        public void Test7DureeCumuleTotal()
+        {
+         /*   DateTime tempsEtape = new DateTime(2020, 3, 3, 13, 1, 1);
+              DateTime tempsEtape = new DateTime(2020, 3, 3, 13, 1, 1);
+            voilier1Context model1 = new voilier1Context();
+            GestionCourse modelGestionCourse = new GestionCourse();
+            VoilierEtape voilierEtape = new VoilierEtape(10, tempsEtape, 5, 7, etape1Time, tempsEtape);
+            modelGestionCourse.DureeCumuleReel1()
+            */
+        }
     }
 }

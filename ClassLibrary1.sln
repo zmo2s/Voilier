@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoilierLibrary", "VoilierLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUnitaire", "TestUnitaire\TestUnitaire.csproj", "{3EC865C4-89F1-4C01-890A-4FC65C846568}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "projet_voilier", "..\..\..\Desktop\projet_voilier\projet_voilier.csproj", "{7610B38D-95C9-43BE-8A18-10B1AB5648A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{3EC865C4-89F1-4C01-890A-4FC65C846568}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EC865C4-89F1-4C01-890A-4FC65C846568}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EC865C4-89F1-4C01-890A-4FC65C846568}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7610B38D-95C9-43BE-8A18-10B1AB5648A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7610B38D-95C9-43BE-8A18-10B1AB5648A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7610B38D-95C9-43BE-8A18-10B1AB5648A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7610B38D-95C9-43BE-8A18-10B1AB5648A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
